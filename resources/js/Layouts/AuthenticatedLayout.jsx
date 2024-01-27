@@ -25,12 +25,16 @@ export default function Authenticated({ user, header, children }) {
                                     Dashboard
                                 </NavLink>
                                 <NavLink href={route('post.index')} active={route().current('post.index')}>
-                                    My Posts
+                                    Posts
+                                </NavLink>
+                                <NavLink href={route('getFriends')} active={route().current('getFriends')}>
+                                    Friends
                                 </NavLink>
                             </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
+                            <a href={route('findFriends')} className='ms-3 relative'>Find Friends</a>
                             <a href={route('post.create')} className='ms-3 relative'>+ Create</a>
                             <div className="ms-3 relative">
                                 <Dropdown>
@@ -69,6 +73,7 @@ export default function Authenticated({ user, header, children }) {
                         </div>
 
                         <div className="-me-2 flex items-center space-between sm:hidden">
+                        <a href={route('findFriends')} className='mx-5'>Find Friends</a>
                             <a href={route('post.create')}>+ Create</a>
                             <button
                                 onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
@@ -101,7 +106,10 @@ export default function Authenticated({ user, header, children }) {
                             Dashboard
                         </ResponsiveNavLink>
                         <ResponsiveNavLink href={route('post.index')} active={route().current('post.index')}>
-                            My Posts
+                            Posts
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('getFriends')} active={route().current('getFriends')}>
+                            Friends
                         </ResponsiveNavLink>
                     </div>
 
