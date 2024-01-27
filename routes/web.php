@@ -1,8 +1,11 @@
 <?php
 
+
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -40,6 +43,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // For friendships:
+    Route::get('toggleFriend/{id}', [UserController::class, 'toggleFriend'])->name('toggleFriend');
+    Route::get('getFriends', [UserController::class, 'getFriends'])->name('getFriends');
+    Route::get('findFriends', [UserController::class, 'findFriends'])->name('findFriends');
 });
 
 require __DIR__.'/auth.php';
