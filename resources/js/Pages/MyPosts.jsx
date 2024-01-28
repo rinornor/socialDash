@@ -16,10 +16,13 @@ export default function MyPosts({ auth, posts }) {
                             {posts && posts.map((post, index) => {
                                return  (<div
                                  key={index}>
-                                    <h1 className='flex justify-center text-pretty'>{post.title}</h1>
+                                    
+                                    <h1>{post.title}</h1>
+                                    
                                     <p>{post.content}</p>
                                     {/* <p>{post.created_at}</p> */}
                                     <Link href={route('post.edit', {post})}>Edit</Link>
+                                    
                                     
                                  </div>)
                             })}
