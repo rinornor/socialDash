@@ -1,3 +1,4 @@
+import Post from '@/Components/Post';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 
@@ -14,14 +15,12 @@ export default function MyPosts({ auth, posts }) {
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                             {posts && posts.map((post, index) => {
-                               return  (<div
-                                 key={index}>
-                                    <h1 className='flex justify-center text-pretty'>{post.title}</h1>
-                                    <p>{post.content}</p>
-                                    {/* <p>{post.created_at}</p> */}
-                                    <Link href={route('post.edit', {post})}>Edit</Link>
+                               return  (<div className='flex mx-auto flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700' key={index}>
+                                 <Post postimi={post}  theRoute={route('post.edit', {post})} />
                                     
-                                 </div>)
+                                    
+                                 </div>
+                                 )
                             })}
                         </div>
                     </div>

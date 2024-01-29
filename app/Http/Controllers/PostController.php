@@ -61,6 +61,7 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         Post::findOrFail($id)->update(['title'=> $request->title, 'content' => $request->content]);
+        return redirect()->back();
 
     }
 
