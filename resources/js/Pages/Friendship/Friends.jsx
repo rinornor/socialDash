@@ -12,7 +12,7 @@ export default function Friends({ auth, userFriends }) {
 
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    
                         <div className="mx-auto w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-70">
                             <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
 
@@ -39,7 +39,7 @@ export default function Friends({ auth, userFriends }) {
                         </div>
                         
                         
-                    </div>
+                    
                 </div>
             </div>
         </AuthenticatedLayout>
