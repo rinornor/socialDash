@@ -7,7 +7,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Head title="Welcome" />
             <div className="h-screen flex items-center justify-center">
                 <ApplicationLogo />
-                <div>
+                <div className='p-10 m-10'>
                     {auth.user ? (
                         <Link
                             href={route('dashboard')}
